@@ -20,7 +20,7 @@ import (
 	"github.com/go-logr/logr"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/Navegosd/log"
+	"github.com/Navegos/log"
 )
 
 // New instantiates a new logr.Logger that sends entries to the given

@@ -5,8 +5,8 @@ go 1.23
 replace github.com/Navegos/log => ../
 
 require (
+	github.com/Navegos/log v0.0.0-20241228020436-6fd003323b85
 	github.com/go-logr/logr v1.4.2
-	github.com/Navegos/log v0.0.0-20230118185536-8e43a48b83a9
 	github.com/stretchr/testify v1.10.0
 	go.uber.org/zap v1.27.0
 )
