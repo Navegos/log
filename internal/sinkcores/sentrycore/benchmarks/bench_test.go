@@ -19,7 +19,7 @@ package benchmarks_test
 import (
 	"testing"
 
-	"github.com/cockroachdb/errors"
+	"github.com/Navegos/errors"
 	"github.com/getsentry/sentry-go"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zapcore"

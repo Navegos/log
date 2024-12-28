@@ -19,11 +19,11 @@ package configurable
 import (
 	"go.uber.org/zap/zapcore"
 
-	"github.com/sourcegraph/log"
+	"github.com/Navegos/log"
 )
 
 // Logger exposes internal APIs that must be implemented on
-// github.com/sourcegraph/log.zapAdapter
+// github.com/Navegos/log.zapAdapter
 type Logger interface {
 	log.Logger
 

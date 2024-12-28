@@ -21,9 +21,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Navegos/errors"
 	"github.com/Navegos/log/internal/encoders"
 	"github.com/Navegos/log/internal/otelfields"
-	"github.com/cockroachdb/errors"
 	"github.com/getsentry/sentry-go"
 	"go.uber.org/zap/zapcore"
 )
@@ -122,7 +122,7 @@ func (w *worker) capture(errCtx *errorContext) {
 
 	if len(event.Exception) > 0 {
 		// Sentry uses the Type of the first exception as the issue title. By default,
-		// "github.com/cockroachdb/errors" uses "<filename>:<lineno> (<functionname>)"
+		// "github.com/Navegos/errors" uses "<filename>:<lineno> (<functionname>)"
 		// which is very sensitive to move up/down lines. Using the original error
 		// string would be much more readable. We are also not losing location
 		// information because that is also encoded in the stack trace.
@@ -139,7 +139,7 @@ func (w *worker) capture(errCtx *errorContext) {
 		// 	// Note that "first exception" is the last item in the slice,
 		// 	// because... Sentry is annoying.
 		//
-		// Source: https://github.com/cockroachdb/errors/blob/26622367a22260fa287d2f7aa2a085b0324c74ee/report/report.go#L324-L325
+		// Source: https://github.com/Navegos/errors/blob/26622367a22260fa287d2f7aa2a085b0324c74ee/report/report.go#L324-L325
 		// We've observed this behaviour in practice as well. So here, make sure we are
 		// overwriting Type on the LAST exception instead of the first.
 		event.Exception[len(event.Exception)-1].Type = fmt.Sprintf("[%s] %s: %s",
